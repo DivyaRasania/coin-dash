@@ -1,0 +1,61 @@
+[gd_scene load_steps=13 format=3 uid="uid://cjr55e0kqqcws"]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_umrah"]
+[ext_resource type="PackedScene" uid="uid://denuhkrlr8gpf" path="res://text_scenes/coin.tscn" id="2_u8e7d"]
+[ext_resource type="PackedScene" uid="uid://bad3udmev20oq" path="res://text_scenes/player.tscn" id="3_ig1y7"]
+[ext_resource type="PackedScene" uid="uid://b52wgcmkdqykh" path="res://text_scenes/powerup.tscn" id="3_snorh"]
+[ext_resource type="PackedScene" uid="uid://dd73xusplib3w" path="res://text_scenes/hud.tscn" id="4_4xsad"]
+[ext_resource type="PackedScene" uid="uid://c3vy65pn6olmb" path="res://text_scenes/cactus.tscn" id="4_lladm"]
+[ext_resource type="Texture2D" uid="uid://dvjrm3t661ljy" path="res://assets/grass.png" id="4_mbjvw"]
+[ext_resource type="AudioStream" uid="uid://chtxh7j8e318e" path="res://assets/audio/Coin.wav" id="6_qiva1"]
+[ext_resource type="AudioStream" uid="uid://b4c44nagj734v" path="res://assets/audio/Level.wav" id="7_s4sqd"]
+[ext_resource type="AudioStream" uid="uid://4ur7trbrq18y" path="res://assets/audio/EndSound.wav" id="8_xlwhc"]
+[ext_resource type="AudioStream" uid="uid://bw5nrro5njw2i" path="res://assets/audio/Powerup.wav" id="9_5a73f"]
+[ext_resource type="AudioStream" uid="uid://celfp3nx7c4v6" path="res://assets/background musics/Phillip Glass Elevator - Ezra Lipp.mp3" id="12_ff60y"]
+
+[node name="Main" type="Node" groups=["obstacles"]]
+script = ExtResource("1_umrah")
+coin_scene = ExtResource("2_u8e7d")
+powerup_scene = ExtResource("3_snorh")
+cactus_scene = ExtResource("4_lladm")
+
+[node name="Background" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_mbjvw")
+stretch_mode = 1
+
+[node name="GameTimer" type="Timer" parent="."]
+
+[node name="HUD" parent="." instance=ExtResource("4_4xsad")]
+
+[node name="Player" parent="." instance=ExtResource("3_ig1y7")]
+
+[node name="CoinSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_qiva1")
+
+[node name="LevelSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_s4sqd")
+
+[node name="EndSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_xlwhc")
+
+[node name="PowerupSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_5a73f")
+
+[node name="PowerupTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_ff60y")
+volume_db = 3.0
+autoplay = true
+
+[connection signal="timeout" from="GameTimer" to="." method="_on_game_timer_timeout"]
+[connection signal="start_game" from="HUD" to="." method="_on_hud_start_game"]
+[connection signal="hurt" from="Player" to="." method="_on_player_hurt"]
+[connection signal="pickup" from="Player" to="." method="_on_player_pickup"]
+[connection signal="timeout" from="PowerupTimer" to="." method="_on_poweup_timer_timeout"]

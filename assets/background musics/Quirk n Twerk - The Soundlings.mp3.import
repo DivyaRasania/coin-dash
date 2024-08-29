@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmug7mshgjhjw"
+path="res://.godot/imported/Quirk n Twerk - The Soundlings.mp3-5daf8bf5df5a2b6e13d22258c7bf27c6.mp3str"
+
+[deps]
+
+source_file="res://assets/background musics/Quirk n Twerk - The Soundlings.mp3"
+dest_files=["res://.godot/imported/Quirk n Twerk - The Soundlings.mp3-5daf8bf5df5a2b6e13d22258c7bf27c6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wmwnf4hsq5wh"
+path="res://.godot/imported/Bump - Dyalla.mp3-09ff4eddda7277dd25eca342d024e2bf.mp3str"
+
+[deps]
+
+source_file="res://assets/background musics/Bump - Dyalla.mp3"
+dest_files=["res://.godot/imported/Bump - Dyalla.mp3-09ff4eddda7277dd25eca342d024e2bf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0.0
+bpm=0.0
+beat_count=0
+bar_beats=4

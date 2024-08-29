@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://celfp3nx7c4v6"
+path="res://.godot/imported/Phillip Glass Elevator - Ezra Lipp.mp3-8d7c8b2beaf644d430e6c7a243f97cdf.mp3str"
+
+[deps]
+
+source_file="res://assets/background musics/Phillip Glass Elevator - Ezra Lipp.mp3"
+dest_files=["res://.godot/imported/Phillip Glass Elevator - Ezra Lipp.mp3-8d7c8b2beaf644d430e6c7a243f97cdf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
