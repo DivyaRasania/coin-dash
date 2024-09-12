@@ -40,6 +40,5 @@ func _on_area_entered(area):
 		area.pickup()
 		pickup.emit("powerup")
 	if area.is_in_group("obstacles"):
-		position = Vector2(randi_range(0, screensize.x), randi_range(0, screensize.y))
 		hurt.emit()
 		die()
